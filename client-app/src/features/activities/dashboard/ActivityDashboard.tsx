@@ -3,8 +3,8 @@ import { observer } from 'mobx-react-lite';
 import { Grid } from 'semantic-ui-react';
 import ActivityList from './ActivityList';
 import { useStore } from '../../../app/stores/store';
-import LoadingComponent from '../../../app/layout/LoadingComponent';
 import ActivityListItemPlaceholder from './ActivityListItemPlaceholder';
+import ActivityFilters from './ActivityFilters';
 
 const ActivityDashboard = () => {
   const { activityStore } = useStore();
@@ -27,7 +27,7 @@ const ActivityDashboard = () => {
         )}
       </Grid.Column>
       <Grid.Column width={6}>
-        <h2>Activities Filter</h2>
+        <ActivityFilters />
       </Grid.Column>
     </Grid>
   );

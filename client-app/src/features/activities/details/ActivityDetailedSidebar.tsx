@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 import { Activity } from '../../../app/models/activity';
 
 interface Props {
@@ -9,4 +10,4 @@ const ActivityDetailedSidebar = ({ activity }: Props) => {
   return <div></div>;
 };
 
-export default ActivityDetailedSidebar;
+export default observer(ActivityDetailedSidebar);

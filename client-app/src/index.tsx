@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.css';
+import 'react-calendar/dist/Calendar.css';
 import './app/layout/styles.css';
 import { store, StoreContext } from './app/stores/store';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 import { Grid, Icon, Segment } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
 
@@ -22,19 +23,22 @@ const ActivityDetailedInfo = ({ activity }: Props) => {
       <Segment attached>
         <Grid verticalAlign='middle'>
           <Grid.Column width={1}>
-            <Icon name='calendar' size='large' color='teal' />
+            <Icon name='calendar alternate outline' size='large' color='teal' />
           </Grid.Column>
           <Grid.Column width={15}>
-            <span>{/* {format(activity.date!, 'dd MMM yyyy h:mm aa')} */}</span>
+            <span>
+              {/* {format(activity.date!, 'dd MMM yyyy h:mm aa')} */}
+              {activity.date}
+            </span>
           </Grid.Column>
         </Grid>
       </Segment>
       <Segment attached>
         <Grid verticalAlign='middle'>
           <Grid.Column width={1}>
-            <Icon name='marker' size='large' color='teal' />
+            <Icon name='map marker alternate' size='large' color='teal' />
           </Grid.Column>
-          <Grid.Column width={11}>
+          <Grid.Column width={15}>
             <span>
               {activity.venue}, {activity.city}
             </span>
@@ -45,4 +49,4 @@ const ActivityDetailedInfo = ({ activity }: Props) => {
   );
 };
 
-export default ActivityDetailedInfo;
+export default observer(ActivityDetailedInfo);

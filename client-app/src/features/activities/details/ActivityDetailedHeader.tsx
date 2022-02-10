@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react-lite';
 import { Segment, Image, Item, Header } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
 
@@ -38,6 +39,7 @@ const ActivityDetailedHeader = ({ activity }: Props) => {
                   style={{ color: 'white' }}
                 />
                 {/* <p>{format(activity.date!, 'dd MMM yyyy')}</p> */}
+                <p>{activity.date}</p>
                 <p>
                   Hosted by{' '}
                   {/* <strong>
@@ -55,4 +57,4 @@ const ActivityDetailedHeader = ({ activity }: Props) => {
   );
 };
 
-export default ActivityDetailedHeader;
+export default observer(ActivityDetailedHeader);

@@ -21,12 +21,13 @@ const ActivityListItem = ({ activity }: Props) => {
         )} */}
         <Item.Group>
           <Item>
-            {/* <Item.Image
+            <Item.Image
               style={{ marginBottom: 3 }}
               size='tiny'
               circular
-              src={activity.host?.image || '/assets/user.png'}
-            /> */}
+              // src={activity.host?.image || '/assets/user.png'}
+              src='/assets/user.png'
+            />
             <Item.Content>
               <Item.Header as={Link} to={`/activities/${activity.id}`}>
                 {activity.title}
@@ -58,7 +59,12 @@ const ActivityListItem = ({ activity }: Props) => {
       <Segment>
         <span>
           {/* <Icon name='clock' /> {format(activity.date!, 'dd MMM yyyy h:mm aa')} */}
-          <Icon name='marker' /> {activity.venue}
+          <Icon name='clock' /> {activity.date}
+          <Icon
+            name='map marker alternate'
+            style={{ marginLeft: '1rem' }}
+          />{' '}
+          {activity.venue}
         </span>
       </Segment>
       <Segment secondary>
