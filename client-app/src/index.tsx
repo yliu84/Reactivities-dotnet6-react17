@@ -1,13 +1,21 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { createBrowserHistory } from 'history';
+import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css';
-import './index.css';
+import 'semantic-ui-css/semantic.css';
+import './app/layout/styles.css';
+import { store, StoreContext } from './app/stores/store';
+
+export const history = createBrowserHistory();
 
 ReactDOM.render(
-
-    <App />,
+  <StoreContext.Provider value={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StoreContext.Provider>,
 
   document.getElementById('root')
 );
