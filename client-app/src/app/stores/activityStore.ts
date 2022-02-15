@@ -34,6 +34,7 @@ export default class ActivityStore{
         this.loadingInitial= true;
         try {
             const activities = await agent.Activities.list();
+            
             activities.forEach(activity =>{
                 activity.date && (activity.date = activity.date?.split('T')[0]);
                 this.activityRegistry.set(activity.id, activity);
