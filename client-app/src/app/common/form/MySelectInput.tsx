@@ -24,7 +24,7 @@ const MySelectInput = (props: Props) => {
         placeholder={props.placeholder}
       />
       {meta.touched && meta.error ? (
-        <Label basic color='red'>
+        <Label pointing basic color='red'>
           {meta.error}
         </Label>
       ) : null}

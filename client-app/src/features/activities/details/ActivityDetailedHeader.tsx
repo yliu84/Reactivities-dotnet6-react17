@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
+import { format } from 'date-fns';
 import { Segment, Image, Item, Header } from 'semantic-ui-react';
 import { Activity } from '../../../app/models/activity';
 
@@ -38,8 +39,7 @@ const ActivityDetailedHeader = ({ activity }: Props) => {
                   content={activity.title}
                   style={{ color: 'white' }}
                 />
-                {/* <p>{format(activity.date!, 'dd MMM yyyy')}</p> */}
-                <p>{activity.date}</p>
+                <p>{format(activity.date!, 'dd MMM yyyy')}</p>
                 <p>
                   Hosted by{' '}
                   {/* <strong>

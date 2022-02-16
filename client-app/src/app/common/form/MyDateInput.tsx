@@ -15,7 +15,7 @@ const MyDateInput = (props: Partial<ReactDatePickerProps>) => {
         onChange={(value) => helpers.setValue(value)}
       />
       {meta.touched && meta.error ? (
-        <Label basic color='red'>
+        <Label pointing basic color='red'>
           {meta.error}
         </Label>
       ) : null}
