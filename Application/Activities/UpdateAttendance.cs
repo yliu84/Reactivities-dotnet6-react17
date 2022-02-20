@@ -46,12 +46,15 @@ namespace Application.Activities
 
                 var attendance = activity.Attendees.FirstOrDefault(x => x.AppUser.UserName == user.UserName);
 
+                // Logged In user is host, then update activity to cancelled or actived
                 if (attendance != null && hostUsername == user.UserName)
                     activity.IsCancelled = !activity.IsCancelled;
 
+                // Logged in User is attendee, then remove user from attendees
                 if (attendance != null && hostUsername != user.UserName)
                     activity.Attendees.Remove(attendance);
 
+                // Logged in User is not attendee, then add user in attendance
                 if (attendance == null)
                 {
                     attendance = new ActivityAttendee
