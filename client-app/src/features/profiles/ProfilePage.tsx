@@ -14,6 +14,8 @@ const ProfilePage = () => {
 
   useEffect(() => {
     loadProfile(username);
+
+    // change tab back to 0 when exist page
     return () => {
       setActiveTab(0);
     };
