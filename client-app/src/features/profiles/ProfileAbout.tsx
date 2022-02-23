@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../app/stores/store';
 import { Button, Grid, Header, Tab } from 'semantic-ui-react';
+import ProfileEditForm from './ProfileEditForm';
 
 const ProfileAbout = () => {
-  // const { profileStore } = useStore();
-  // const { isCurrentUser, profile } = profileStore;
+  const { profileStore } = useStore();
+  const { isCurrentUser, profile } = profileStore;
   const [editMode, setEditMode] = useState(false);
 
   return (
     <Tab.Pane>
       <Grid>
         <Grid.Column width='16'>
-          {/* <Header
+          <Header
             floated='left'
             icon='user'
             content={`About ${profile?.displayName}`}
@@ -24,14 +25,14 @@ const ProfileAbout = () => {
               content={editMode ? 'Cancel' : 'Edit Profile'}
               onClick={() => setEditMode(!editMode)}
             />
-          )} */}
+          )}
         </Grid.Column>
         <Grid.Column width='16'>
-          {/* {editMode ? (
+          {editMode ? (
             <ProfileEditForm setEditMode={setEditMode} />
           ) : (
             <span style={{ whiteSpace: 'pre-wrap' }}>{profile?.bio}</span>
-          )} */}
+          )}
         </Grid.Column>
       </Grid>
     </Tab.Pane>
