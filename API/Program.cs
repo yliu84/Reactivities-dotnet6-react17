@@ -31,7 +31,9 @@ app.UseCsp(opt => opt
         "https://fonts.googleapis.com",
         "sha256-/epqQuRElKW1Z83z1Sg8Bs2MKi99Nrq41Z3fnS2Nrgk=",
         "sha256-2aahydUs+he2AO0g7YZuG67RGvfE9VXGbycVgIwMnBI=",
-        "sha256-+oGcdj5BhO6SoiIGYIkPOMYi7d2h2Pp/bkJLBfYL+kk="
+        "sha256-+oGcdj5BhO6SoiIGYIkPOMYi7d2h2Pp/bkJLBfYL+kk=",
+        "sha256-edu1Wj8pInOHtaExG1rikS6rfKXO8kFXLAdOTBpHMYk=",
+        "sha256-yChqzBduCCi4o4xdbXRXh4U/t1rP4UUUMJt+rB+ylUI="
     ))
     .FontSources(s => s.Self().CustomSources(
         "https://fonts.gstatic.com", "data:"
@@ -48,8 +50,9 @@ app.UseCsp(opt => opt
         .CustomSources(
             "sha256-HIgflxNtM43xg36bBIUoPTUuo+CXZ319LsTVRtsZ/VU=",
             "https://connect.facebook.net",
-            "sha256-3x3EykMfFJtFd84iFKuZG0MoGAo5XdRfl3rq3r//ydA="
-        ))
+            "https://fonts.googleapis.com",
+            "sha256-3x3EykMfFJtFd84iFKuZG0MoGAo5XdRfl3rq3r//ydA=",
+            "sha256-DcL1wTPG7zzW3wpiRtWmqayS5TKCXITbA9bVcgWqAv8="))
 );
 
 if (app.Environment.IsDevelopment())
