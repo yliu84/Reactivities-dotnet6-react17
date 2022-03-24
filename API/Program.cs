@@ -44,7 +44,8 @@ app.UseCsp(opt => opt
         "https://res.cloudinary.com",
         "https://www.facebook.com",
         "https://platform-lookaside.fbsbx.com",
-        "data:"
+        "data:",
+        "https:"
         ))
     .ScriptSources(s => s.Self()
         .CustomSources(
