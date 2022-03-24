@@ -25,7 +25,7 @@ app.UseXContentTypeOptions();
 app.UseReferrerPolicy(opt => opt.NoReferrer());
 app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
 app.UseXfo(opt => opt.Deny());
-app.UseCsp(opt => opt
+app.UseCspReportOnly(opt => opt
     .BlockAllMixedContent()
     .StyleSources(s => s.Self().CustomSources(
         "https://fonts.googleapis.com",
@@ -45,7 +45,7 @@ app.UseCsp(opt => opt
         "https://www.facebook.com",
         "https://platform-lookaside.fbsbx.com",
         "data:",
-        "https:"
+        "blob:"
         ))
     .ScriptSources(s => s.Self()
         .CustomSources(
