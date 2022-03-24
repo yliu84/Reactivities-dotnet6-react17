@@ -25,7 +25,7 @@ export default class CommentStore {
                 runInAction(() => {
                     comments.forEach(comment => {
                         // change datetime to UTC date
-                        comment.createdAt = new Date(comment.createdAt + 'Z');
+                        comment.createdAt = new Date(comment.createdAt);
                     })
                     this.comments = comments
                 });

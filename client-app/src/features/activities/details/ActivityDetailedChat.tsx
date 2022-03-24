@@ -18,6 +18,7 @@ const ActivityDetailedChat = ({ activityId }: Props) => {
     if (activityId) {
       commentStore.createHubConnection(activityId);
     }
+
     return () => {
       commentStore.clearComments();
     };
